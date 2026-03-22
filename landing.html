@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaapi CSS </title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ─── Navbar ──────────────────────────────────────────────────────── -->
+<nav class="nav">
+    <div class="nav-logo">
+        <img src="logo.png" alt="kaapi logo" class="nav-logo-img" />
+        kaapi<span>.css</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#playground">Playground</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#dynamic">Dynamic</a></li>
+        <li><a href="#docs">Classes</a></li>
+    </ul>
+</nav>
+
+<!-- ─── Hero ────────────────────────────────────────────────────────── -->
+<div class="hero">
+    <div class="hero-badge">✦ Utility-first &nbsp;·&nbsp; Zero config</div>
+    <h1>Style with <span>classes.</span><br/>Ship faster.</h1>
+    <p>A lightweight JS-powered utility class engine.<br/>One script tag. No build step. Just write classes.</p>
+    <a href="#playground" class="btn btn-primary">Try Playground</a>
+    <a href="#docs" class="btn btn-outline">View Docs</a>
+</div>
+
+<hr class="divider" />
+
+<!-- ─── Features ────────────────────────────────────────────────────── -->
+<section class="section" id="features">
+    <div class="section-label">Why Kaapi</div>
+    <div class="section-title">Everything you need, nothing you don't.</div>
+    <div class="section-sub">Drop in one file and start building.</div>
+    <div class="cards">
+        <div class="card">
+            <span class="card-icon">⚡</span>
+            <h3>Zero Config</h3>
+            <p>Include <code class="code-badge">kaapi.js</code> and go. No config, no build, no install.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🎯</span>
+            <h3>Dynamic Values</h3>
+            <p><code class="code-badge">kaapi-p-12</code>, <code class="code-badge">kaapi-mt-32</code> — any number works. No duplicate class definitions.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">📦</span>
+            <h3>Tiny Footprint</h3>
+            <p>One JS file. No dependencies. Inline styles always win specificity.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🧩</span>
+            <h3>Composable</h3>
+            <p>Mix static and dynamic classes freely on any element.</p>
+        </div>
+    </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─── Playground ───────────────────────────────────────────────────── -->
+<section class="section" id="playground">
+    <div class="section-label">Playground</div>
+    <div class="section-title">See it live.</div>
+    <div class="section-sub">Edit the HTML below and watch the preview update in real time. Click chips to toggle classes.</div>
+
+    <div class="playground-wrap">
+        <!-- Editor -->
+        <div class="pg-panel">
+            <div class="pg-panel-header">
+                <div class="dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <span>editor</span>
+            </div>
+            <textarea id="pg-input" spellcheck="false"></textarea>
+            <div class="pg-hint">← edit html with kaapi classes</div>
+        </div>
+
+        <!-- Preview -->
+        <div class="pg-panel">
+            <div class="pg-panel-header">
+                <div class="dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <span>preview</span>
+            </div>
+            <div id="pg-preview"></div>
+        </div>
+    </div>
+
+    <!-- Quick class chips -->
+    <div class="pg-class-chips" id="pg-chips"></div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─── Usage ────────────────────────────────────────────────────────── -->
+<section class="section" id="usage">
+    <div class="section-label">Getting Started</div>
+    <div class="section-title">Up and running in 30 seconds.</div>
+    <div class="section-sub">No npm. No bundler. Just a script tag.</div>
+
+    <div class="code-block">
+<span class="comment">&lt;!-- 1. include the script --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src=</span><span class="val">"kaapi.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- 2. use classes on any element --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"kaapi-flex kaapi-gap-16 kaapi-p-24 kaapi-rounded-md"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;p</span> <span class="attr">class=</span><span class="val">"kaapi-text-xl kaapi-font-bold kaapi-text-purple"</span><span class="tag">&gt;</span>Hello, Kaapi<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- 3. for dynamically added elements --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+  <span class="attr">window</span>.<span class="val">kaapi</span>.<span class="attr">apply</span>(newElement);
+<span class="tag">&lt;/script&gt;</span>
+    </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─── Dynamic Classes ──────────────────────────────────────────────── -->
+<section class="section" id="dynamic">
+    <div class="section-label">Dynamic Classes</div>
+    <div class="section-title">Any number. No predefined values.</div>
+    <div class="section-sub">Pattern: <code class="code-badge">kaapi-{prop}-{n}</code> → maps directly to CSS. Write any value you need.</div>
+
+    <table class="docs-table">
+        <thead>
+            <tr><th>Pattern</th><th>CSS Property</th><th>Example</th><th>Output</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code class="code-badge">kaapi-p-{n}</code></td><td>padding</td><td>kaapi-p-16</td><td>padding: 16px</td></tr>
+            <tr><td><code class="code-badge">kaapi-pt-{n}</code></td><td>padding-top</td><td>kaapi-pt-8</td><td>padding-top: 8px</td></tr>
+            <tr><td><code class="code-badge">kaapi-pb-{n}</code></td><td>padding-bottom</td><td>kaapi-pb-8</td><td>padding-bottom: 8px</td></tr>
+            <tr><td><code class="code-badge">kaapi-pl-{n}</code></td><td>padding-left</td><td>kaapi-pl-12</td><td>padding-left: 12px</td></tr>
+            <tr><td><code class="code-badge">kaapi-pr-{n}</code></td><td>padding-right</td><td>kaapi-pr-12</td><td>padding-right: 12px</td></tr>
+            <tr><td><code class="code-badge">kaapi-px-{n}</code></td><td>padding left + right</td><td>kaapi-px-20</td><td>padding-left: 20px; padding-right: 20px</td></tr>
+            <tr><td><code class="code-badge">kaapi-py-{n}</code></td><td>padding top + bottom</td><td>kaapi-py-12</td><td>padding-top: 12px; padding-bottom: 12px</td></tr>
+            <tr><td><code class="code-badge">kaapi-m-{n}</code></td><td>margin</td><td>kaapi-m-16</td><td>margin: 16px</td></tr>
+            <tr><td><code class="code-badge">kaapi-mt-{n}</code></td><td>margin-top</td><td>kaapi-mt-8</td><td>margin-top: 8px</td></tr>
+            <tr><td><code class="code-badge">kaapi-mb-{n}</code></td><td>margin-bottom</td><td>kaapi-mb-8</td><td>margin-bottom: 8px</td></tr>
+            <tr><td><code class="code-badge">kaapi-ml-{n}</code></td><td>margin-left</td><td>kaapi-ml-4</td><td>margin-left: 4px</td></tr>
+            <tr><td><code class="code-badge">kaapi-mr-{n}</code></td><td>margin-right</td><td>kaapi-mr-4</td><td>margin-right: 4px</td></tr>
+            <tr><td><code class="code-badge">kaapi-mx-{n}</code></td><td>margin left + right</td><td>kaapi-mx-32</td><td>margin-left: 32px; margin-right: 32px</td></tr>
+            <tr><td><code class="code-badge">kaapi-my-{n}</code></td><td>margin top + bottom</td><td>kaapi-my-24</td><td>margin-top: 24px; margin-bottom: 24px</td></tr>
+            <tr><td><code class="code-badge">kaapi-br-{n}</code></td><td>border-radius</td><td>kaapi-br-8</td><td>border-radius: 8px</td></tr>
+            <tr><td><code class="code-badge">kaapi-bw-{n}</code></td><td>border-width</td><td>kaapi-bw-2</td><td>border-width: 2px</td></tr>
+            <tr><td><code class="code-badge">kaapi-fs-{n}</code></td><td>font-size</td><td>kaapi-fs-18</td><td>font-size: 18px</td></tr>
+            <tr><td><code class="code-badge">kaapi-lh-{n}</code></td><td>line-height</td><td>kaapi-lh-2</td><td>line-height: 2</td></tr>
+            <tr><td><code class="code-badge">kaapi-gap-{n}</code></td><td>gap</td><td>kaapi-gap-12</td><td>gap: 12px</td></tr>
+            <tr><td><code class="code-badge">kaapi-w-{n}</code></td><td>width</td><td>kaapi-w-200</td><td>width: 200px</td></tr>
+            <tr><td><code class="code-badge">kaapi-h-{n}</code></td><td>height</td><td>kaapi-h-60</td><td>height: 60px</td></tr>
+            <tr><td><code class="code-badge">kaapi-z-{n}</code></td><td>z-index</td><td>kaapi-z-10</td><td>z-index: 10</td></tr>
+            <tr><td><code class="code-badge">kaapi-op-{n}</code></td><td>opacity</td><td>kaapi-op-75</td><td>opacity: 0.75</td></tr>
+            <tr><td><code class="code-badge">kaapi-top-{n}</code></td><td>top</td><td>kaapi-top-0</td><td>top: 0px</td></tr>
+            <tr><td><code class="code-badge">kaapi-left-{n}</code></td><td>left</td><td>kaapi-left-16</td><td>left: 16px</td></tr>
+            <tr><td><code class="code-badge">kaapi-right-{n}</code></td><td>right</td><td>kaapi-right-0</td><td>right: 0px</td></tr>
+            <tr><td><code class="code-badge">kaapi-bottom-{n}</code></td><td>bottom</td><td>kaapi-bottom-0</td><td>bottom: 0px</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<hr class="divider" />
+
+<!-- ─── Static Docs ───────────────────────────────────────────────────── -->
+<section class="section" id="docs">
+    <div class="section-label">Static Classes</div>
+    <div class="section-title">Fixed utilities for common patterns.</div>
+    <div class="section-sub">Layout, typography, color, effects ,all in one place.</div>
+
+    <table class="docs-table">
+        <thead>
+            <tr><th>Class</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code class="code-badge">kaapi-flex</code></td><td>display: flex</td></tr>
+            <tr><td><code class="code-badge">kaapi-flex-col</code></td><td>flex-direction: column</td></tr>
+            <tr><td><code class="code-badge">kaapi-flex-wrap</code></td><td>flex-wrap: wrap</td></tr>
+            <tr><td><code class="code-badge">kaapi-grid</code></td><td>display: grid</td></tr>
+            <tr><td><code class="code-badge">kaapi-hidden</code></td><td>display: none</td></tr>
+            <tr><td><code class="code-badge">kaapi-justify-center</code></td><td>justify-content: center</td></tr>
+            <tr><td><code class="code-badge">kaapi-justify-between</code></td><td>justify-content: space-between</td></tr>
+            <tr><td><code class="code-badge">kaapi-justify-end</code></td><td>justify-content: flex-end</td></tr>
+            <tr><td><code class="code-badge">kaapi-items-center</code></td><td>align-items: center</td></tr>
+            <tr><td><code class="code-badge">kaapi-items-start</code></td><td>align-items: flex-start</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-center</code></td><td>text-align: center</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-left</code></td><td>text-align: left</td></tr>
+            <tr><td><code class="code-badge">kaapi-font-bold</code></td><td>font-weight: bold</td></tr>
+            <tr><td><code class="code-badge">kaapi-font-semibold</code></td><td>font-weight: 600</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-xs</code></td><td>font-size: 12px</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-sm</code></td><td>font-size: 14px</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-xl</code></td><td>font-size: 24px</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-2xl</code></td><td>font-size: 32px</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-3xl</code></td><td>font-size: 48px</td></tr>
+            <tr><td><code class="code-badge">kaapi-uppercase</code></td><td>text-transform: uppercase</td></tr>
+            <tr><td><code class="code-badge">kaapi-capitalize</code></td><td>text-transform: capitalize</td></tr>
+            <tr><td><code class="code-badge">kaapi-italic</code></td><td>font-style: italic</td></tr>
+            <tr><td><code class="code-badge">kaapi-tracking-wide</code></td><td>letter-spacing: 0.05em</td></tr>
+            <tr><td><code class="code-badge">kaapi-rounded-sm</code></td><td>border-radius: 4px</td></tr>
+            <tr><td><code class="code-badge">kaapi-rounded-md</code></td><td>border-radius: 8px</td></tr>
+            <tr><td><code class="code-badge">kaapi-rounded-lg</code></td><td>border-radius: 16px</td></tr>
+            <tr><td><code class="code-badge">kaapi-rounded-full</code></td><td>border-radius: 9999px</td></tr>
+            <tr><td><code class="code-badge">kaapi-border</code></td><td>border: 1px solid #e2e8f0</td></tr>
+            <tr><td><code class="code-badge">kaapi-shadow</code></td><td>box-shadow: 0 4px 12px rgba(0,0,0,0.1)</td></tr>
+            <tr><td><code class="code-badge">kaapi-shadow-lg</code></td><td>box-shadow: 0 8px 24px rgba(0,0,0,0.15)</td></tr>
+            <tr><td><code class="code-badge">kaapi-shadow-purple</code></td><td>box-shadow: 0 4px 16px rgba(109,79,194,0.4)</td></tr>
+            <tr><td><code class="code-badge">kaapi-transition</code></td><td>transition: all 0.2s ease</td></tr>
+            <tr><td><code class="code-badge">kaapi-cursor-pointer</code></td><td>cursor: pointer</td></tr>
+            <tr><td><code class="code-badge">kaapi-w-full</code></td><td>width: 100%</td></tr>
+            <tr><td><code class="code-badge">kaapi-relative</code></td><td>position: relative</td></tr>
+            <tr><td><code class="code-badge">kaapi-absolute</code></td><td>position: absolute</td></tr>
+            <tr><td><code class="code-badge">kaapi-overflow-hidden</code></td><td>overflow: hidden</td></tr>
+            <tr><td><code class="code-badge">kaapi-tag</code></td><td>Pill badge — light</td></tr>
+            <tr><td><code class="code-badge">kaapi-tag-dark</code></td><td>Pill badge — dark</td></tr>
+            <tr><td><code class="code-badge">kaapi-avatar</code></td><td>90×90 circular image</td></tr>
+            <tr><td><code class="code-badge">kaapi-full-center</code></td><td>Full viewport flex center</td></tr>
+            <tr><td><code class="code-badge">kaapi-container</code></td><td>max-width 960px, centered</td></tr>
+            <tr><td><code class="code-badge">kaapi-bg-purple</code></td><td>background-color: #6D4FC2</td></tr>
+            <tr><td><code class="code-badge">kaapi-bg-purple-dark</code></td><td>background-color: #0C0724</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-purple</code></td><td>color: #6D4FC2</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-purple-light</code></td><td>color: #C4AEFF</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-white</code></td><td>color: white</td></tr>
+            <tr><td><code class="code-badge">kaapi-text-muted</code></td><td>color: #C4AEFF</td></tr>
+            <tr><td><code class="code-badge">kaapi-dark-bg</code></td><td>background-color: #0C0724</td></tr>
+            <tr><td><code class="code-badge">kaapi-dark-card</code></td><td>Dark card surface + light text</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<hr class="divider" />
+
+<footer class="footer">Made with ❤️ by Jaani</footer>
+
+<script src="kaapi.js"></script>
+<script src="playground.js"></script>
+</body>
+</html>
